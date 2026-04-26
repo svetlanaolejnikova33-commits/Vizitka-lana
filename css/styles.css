@@ -780,10 +780,17 @@ body {
   text-align: center;
 }
 
-/* Печать / PDF: компактно, без принудительных разрывов и пустых листов */
+/* Печать / PDF: A4 landscape, без полей страницы; фоны сохраняются */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
 @media print {
   html,
   body {
+    width: 297mm;
+    min-height: 210mm;
     margin: 0 !important;
     padding: 0 !important;
     background: #0c0c0e !important;
